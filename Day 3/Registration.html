@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title> Registration Form </title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: rgb(215, 153, 17);
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+        }
+
+        label {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+        }
+
+    </style>
+    <center>
+        <h1>Registration Form</h1>
+
+
+    <table border="10PX" style="color: blue;">
+        <form>
+            <tr>
+                <td>
+                    <label for="First_Name">First Name</label>
+                </td>
+                <td><input placeholder="Enter Your First Name" type="text" id="FirstName"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Middle_Name">Middle Name</label>
+                </td>
+                <td>
+                    <input placeholder="ENter Your Middle Name" type="text" id="MiddleName">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Last_Name">Last Name</label>
+                </td>
+                <td>
+                    <input placeholder="Enter Your Last Name" type="text" id="LastName">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Email"> Email</label>
+                </td>
+                <td>
+                    <input placeholder="Enter Your Email" type="Email" id="Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Mobile">Mobile Number</label>
+                </td>
+                <td>
+                    <input placeholder="Enter Your Mobile Number" type="tel" id="Mobile_Number" maxlength="10">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Gender">Gender</label>
+                </td>
+                <td>
+                    <select name="Gender" id="Gender">
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            <tr>
+                <td>
+                    <label for="Age">Age</label>
+                </td>
+                <td>
+                    <input placeholder="Enter Your Age" type="number" id="Age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="DOB">DOB</label>
+                </td>
+                <td>
+                    <input type="date" id="dob">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="PA"> Perment Adress </label>
+                </td>
+                <td>
+                    <textarea placeholder="Enter Your Perment Adress" id="PA" cols="30" rows="4"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Pincode">Pincode</label>
+                </td>
+                <td>
+                    <input placeholder="Enter Pincode" type="tel" id="Pincode" maxlength="6">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="CV">Attach Your CV</label>
+                </td>
+                <td>
+                    <input type="file" id="CV">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="TC">Terms & Condition</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="TC">
+                </td>
+            <tr>
+
+                <td>
+                    <label for="Submit"></label>
+                </td>
+                <td>
+                    <input type="button" id="Submit" value="submit" onclick="saveFile()">
+            </tr>
+
+
+        </form>
+    </table>
+    </center>
+</body>
+
+</html>
+<script>
+    let saveFile = () => {
+        // Get the data from each element on the form.
+        const firstName = document.getElementById("FirstName");
+        const middleName = document.getElementById("MiddleName");
+        const lastName = document.getElementById("LastName");
+        const email = document.getElementById("Email");
+        const phone = document.getElementById("Mobile_Number");
+        const gender = document.getElementById("Gender");
+        const age = document.getElementById("Age");
+        const dob = document.getElementById("dob");
+        const address = document.getElementById("PA");
+        const pincode = document.getElementById("Pincode");
+        
+        const file = document.getElementById("CV");
+        const tc = document.getElementById("TC");
+        const script = document.getElementById("submit");
+
+        let data = "\r First Name: " + firstName.value + " \r\n " + "Middle Name: " + middleName.value + " \r\n " + "Last Name: " + lastName.value + " \r\n " + "Email: " + email.value + " \r\n " + "Phone: " + phone.value + " \r\n " + "Gender: " + gender.value + " \r\n " + "Age: " + age.value + " \r\n " + "Date of Birth: " + dob.value + " \r\n " + "Address: " + address.value + " \r\n " + "Pincode: " + pincode.value + " \r\n " + "T&C: " + tc.value + " \r\n "
+        console.log(data); //printing form data into the console
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: "text/plain" });
+        var filename = new Date();
+        var month = new Date(); //months from 1-12
+        month = month.getMonth();
+
+        var day = new Date();
+        var day = day.getUTCDate();
+
+        var year = new Date();
+        var year = year.getUTCFullYear();
+
+        newdate = year + "/" + month + "/" + day;
+        const sFileName = filename; // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = new Date();
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        } else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click();
+    };
+</script>

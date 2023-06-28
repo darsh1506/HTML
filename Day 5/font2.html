@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Font awsome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        input {
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-bottom: solid black 1px;
+
+        }
+
+        tr {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        input#go {
+            height: 40px;
+            width: 100px;
+            font-size: 15px;
+            background-color: chocolate;
+            border-radius: 20px;
+            border: 0px;
+            margin: 10px;
+        }
+
+        input#go:hover {
+            background-color: #ffffff;
+            color: chocolate;
+            border: 1px solid #111;
+            box-shadow: 0px 0px 30px chocolate;
+        }
+
+        input[type=text] {
+
+            height: 30px;
+            width: 300px;
+        }
+
+        input[type=password] {
+
+            height: 30px;
+            width: 300px;
+        }
+
+        input[type=radio] {
+            border: solid black 4px;
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+    <html lang="en">
+
+    <head>
+
+        <title>Font awsome</title>
+    </head>
+
+<body>
+    <table border="2px" align="center">
+        <tr>
+            <td colspan="3">
+                <h1>
+                    <center>Registration Form</center>
+                </h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-user"></i>
+            </td>
+            <td>
+                <label for="Fname" id="Fnam"> First Name</label>
+            </td>
+            <td>
+                <input placeholder="Enter Your First Name" type="text" id="Fname" name="Fname" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-user"></i>
+            </td>
+            <td>
+                <label for="Mname" id="Mname"> Middle Name</label>
+            </td>
+            <td>
+                <input placeholder="Enter Your Middle Name" type="text" id="Mname" name="Mname" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-venus-mars"></i>
+            </td>
+            <td>
+                <label for="gender" id="gender"> Gender</label>
+            </td>
+            <td>
+                <input type="radio" id="male" name="male" required> Male
+                <input type="radio" id="male" name="male" required> female
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-house"></i>
+            </td>
+            <td>
+                <label for="address" id="address"> Address </label>
+            </td>
+            <td>
+                <textarea name="address" id="address" cols="40" rows="10" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-lock"></i>
+            </td>
+            <td>
+                <label for="Password" id="Password"> Password</label>
+            </td>
+            <td>
+                <input placeholder="Enter Your Password" type="password" id="Password" name="Password" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-file fa-beat-fade"></i>
+            </td>
+            <td>
+                <label for="File" id="File"> Upload Your File</label>
+            </td>
+            <td>
+                <input type="file" id="File" name="File" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-phone"></i>
+            </td>
+            <td>
+                <label for="Call" id="Call">Mobile Number</label>
+            </td>
+            <td>
+                <input type="tel" name="Call" id="Call" maxlength="10" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-envelope"></i>
+            </td>
+            <td>
+                <label for="Email" id="Email"> Email</label>
+            </td>
+            <td>
+                <input type="email" name="Email" id="Email" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa-solid fa-file-circle-check"></i>
+            </td>
+            <td colspan="2">
+                <label for="TC" id="TC">Terms & Condition</label>
+                <input type="checkbox" name="TC" id="TC">
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="3" align="center"><input type="submit" value="submit" id="go" onclick=""></td>
+        </tr>
+    </table>
+</body>
+
+</html>
