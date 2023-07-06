@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple If Statement Example</title>
+</head>
+<body>
+    <h1>Check if a Number is Positive or Negative</h1>
+
+    <label for="number">Enter a number: </label>
+    <input type="number" id="number">
+
+    <button onclick="checkNumber()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            let numberInput = document.getElementById("number").value;
+
+            if (numberInput > 0) {
+                document.getElementById("result").textContent = "The number is positive.";
+            } else if (numberInput < 0) {
+                document.getElementById("result").textContent = "The number is negative.";
+            } else {
+                document.getElementById("result").textContent = "The number is zero.";
+            }
+        }
+    </script>
+</body>
+</html>

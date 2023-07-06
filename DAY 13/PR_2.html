@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onclick Event</title>
+</head>
+
+<style>
+    #one{
+        height: 400px;
+        width: 400px;
+        background-color: crimson;
+    }
+</style>
+
+<body>
+    <div id="one"></div>
+    <button ondblclick="nfunction()" onclick="newfunction()">Change</button>
+</body>
+<script>
+    function newfunction(){
+    document.getElementById("one").style.backgroundColor= "blue";
+}
+    function nfunction(){
+        document.getElementById("one").style.backgroundColor= "black";
+    }
+</script>
+</html>

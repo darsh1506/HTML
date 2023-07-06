@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>If-Else If Statement Example</title>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+
+    <label for="score">Enter your score: </label>
+    <input type="number" id="score">
+
+    <button onclick="calculateGrade()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateGrade() {
+            let scoreInput = document.getElementById("score").value;
+            let grade = "";
+
+            if (scoreInput >= 90) {
+                grade = "A";
+            } else if (scoreInput >= 80) {
+                grade = "B";
+            } else if (scoreInput >= 70) {
+                grade = "C";
+            } else if (scoreInput >= 60) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            document.getElementById("result").textContent = "Your grade is: " + grade;
+        }
+    </script>
+</body>
+</html>
